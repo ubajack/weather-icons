@@ -1,0 +1,50 @@
+body {
+  font-family: 'Poppins';
+  font-size: 22px;
+}
+
+h1 {
+  text-align: center;
+  color: #468612;
+  text-shadow: 2px 4px 0px rgba(0, 20, 0, 0.4);
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+a:link, a:visited {
+  /* color: #265301; */
+  color: #437a16;
+}
+
+a:focus {
+  background: #bae498;
+  border-radius: 10px;
+}
+
+a:hover {
+  background: #cdfeaa;
+  border-radius: 10px;
+}
+
+a:active {
+  background: #265301;
+  color: #cdfeaa;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tile {
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
