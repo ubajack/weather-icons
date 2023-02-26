@@ -8,13 +8,17 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
+const defaultIcons = ['spongebob', 'spongebob-back', 'error', 'alert'];
+const iconsLength = defaultIcons.length;
+
 app.use(cors(corsOptions));
 
 const path = require('path');
 app.use('/weather', express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/**', (req, res) => {
+  const icon = defaultIcons[Math.floor(Math.random() * iconsLength)];
+  res.redirect(`/weather/default/${icon}.png`);
 });
 
 app.listen(port, () => {
