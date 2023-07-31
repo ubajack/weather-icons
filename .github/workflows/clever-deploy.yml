@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check app ID
-        run: echo ${{ env.APP_ID }}
+        run: echo ${{ vars.APP_ID }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -17,7 +17,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - uses: 47ng/actions-clever-cloud@v1.3.1
         with:
-          appID: app_48fb697a-091d-417e-a39e-ee1042c1db8b
+          appID: ${{ vars.APP_ID }}
           force: true
         env:
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
