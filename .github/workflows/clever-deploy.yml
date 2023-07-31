@@ -8,6 +8,8 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
+      - name: Check app ID
+        run: echo "App ID: ${{ env.APP_ID }}"
       - name: Checkout
         uses: actions/checkout@v3
         with:
