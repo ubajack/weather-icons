@@ -5,7 +5,18 @@ on:
     branches: [ "master" ]
 
 jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint Code Base
+        uses: super-linter/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
   deployment:
+    needs: linter
     runs-on: ubuntu-latest
     steps:
       - name: Check app ID
