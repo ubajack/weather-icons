@@ -17,7 +17,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - uses: 47ng/actions-clever-cloud@v1.3.1
         with:
-          appID: ${{ env.APP_ID }}
+          appID: app_48fb697a-091d-417e-a39e-ee1042c1db8b
           force: true
         env:
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
